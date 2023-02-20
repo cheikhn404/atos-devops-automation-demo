@@ -20,7 +20,7 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                    withCredentials([string(credentialsId: '302964a2-0432-4c5b-a3af-eae839041960', variable: 'dockerhubpwd')]) {
                         sh 'docker login -u cheikhn414 -p ${dockerhubpwd}'
                     }
                     sh 'docker push cheikhn414/atos-devops-automation-demo'
