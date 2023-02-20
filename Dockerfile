@@ -9,10 +9,10 @@ RUN apk update && apk add bash
 WORKDIR /app
 
 # Copy the fat jar into the container at /app
-COPY /target/atos-devops-automation-demo.jar /app
+COPY /target/movie-0.0.1-SNAPSHOT.jar /app
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 
 # Run jar file when the container launches
-CMD ["java", "-jar", "atos-devops-automation-demo.jar"]
+CMD ["java", "-jar", "movie-0.0.1-SNAPSHOT.jar"]
