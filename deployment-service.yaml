@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atos-devops-automation-k8s-deployment
+spec:
+  selector:
+    matchLabels:
+      app: atos-devops-automation-demo-k8s
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: atos-devops-automation-demo-k8s
+    spec:
+      containers:
+        - name: atos-devops-automation-demo-k8s
+          image: cheikhn414/atos-devops-automation-demo
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: atos-devops-automation-k8ssvc
+spec:
+  selector:
+    app: atos-devops-automation-demo-k8s
+  ports:
+    - protocol: "TCP"
+      port: 8080
+      targetPort: 8080
+  type: NodePort

@@ -1,7 +1,4 @@
-FROM openjdk:11
-
+FROM openjdk:8
 EXPOSE 8080
-
-ADD target/movie-0.0.1-SNAPSHOT.jar movie-0.0.1-SNAPSHOT.jar
-
-ENTRYPOINT ["java","-jar","/movie-0.0.1-SNAPSHOT.jar"]
+ADD target/devops-integration.jar devops-integration.jar
+ENTRYPOINT ["java","-jar","/devops-integration.jar"]
