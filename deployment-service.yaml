@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: atos-devops-automation-k8s-deployment
+  namespace: atos-devops-automation
 spec:
   selector:
     matchLabels:
@@ -25,6 +26,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: atos-devops-automation-k8ssvc
+  namespace: atos-devops-automation
 spec:
   selector:
     app: atos-devops-automation-demo-k8s
